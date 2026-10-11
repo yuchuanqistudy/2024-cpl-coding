@@ -47,3 +47,10 @@ int main(void) {
 //char	1 Byte	'A'
 //int	4 Bytes	 10
 //double	8 Bytes	 3.14159
+
+//必须类型匹配
+//数据类型	正确的 printf 格式
+//int	    %d
+//double	%f、%e、%g
+//char	    %c
+//字符串	    %s
