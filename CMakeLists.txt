@@ -4,6 +4,6 @@ project(2024_cpl_coding C)
 
 set(CMAKE_C_STANDARD 17)
 
-add_executable(hello hello.c)
-add_executable(guess guess.c)
+add_subdirectory(0-intro)
+add_subdirectory(1-types-io)
 
