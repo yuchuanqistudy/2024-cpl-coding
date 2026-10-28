@@ -76,7 +76,7 @@ void NewLIne(void) {
 //二分查找
 
 #define LEN  10
-int BinarySearch(int key, int dic[], int len);
+int BinarySearch(int key, const int dic[], int len);
 //dictionary[10]全局变量 可以放到main里面
 int dictionary[10] = {1,1,2,3,5,8,13,21,34,55};
 
@@ -84,12 +84,12 @@ int main(void) {
     int key = 0;
     scanf("%d",&key);
     //传一个数组只写数组名
-    int index = BinarySearch(key,dictionary,LEN);
+    int index = BinarySearch(key,const dictionary,LEN);
     printf("%d",index);
 }
 
 //int dic[]这里是数组首地址，必须要有长度，否则我们不知道数组长度
-int BinarySearch(int key, int dic[], int len) {
+int BinarySearch(int key, const int dic[], int len) {
     int low = 0;
     int high = len - 1;
     while (low <= high) {
