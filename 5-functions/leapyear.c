@@ -78,7 +78,7 @@ void NewLIne(void) {
 #define LEN  10
 int BinarySearch(int key, const int dic[], int len);
 //dictionary[10]全局变量 可以放到main里面
-int dictionary[10] = {1,1,2,3,5,8,13,21,34,55};
+const int dictionary[10] = {1,1,2,3,5,8,13,21,34,55};
 
 int main(void) {
     int key = 0;
@@ -104,3 +104,65 @@ int BinarySearch(int key, const int dic[], int len) {
     }
     return -1;
 }
+
+//判读回文串
+//len可写可不写，因为字符串以\n结束，我可以写个循环算一下
+bool Ispara(const char str[], int len);
+
+//选择排序
+#define LEN 10
+int find_min_index(const int num[],int len, int begin);
+void Swap(int arr[], int left, int right_index);
+
+int main(void) {
+    int numbers[] = {1,4,2,4,5,6,2,14,57,32};
+    for (int i = 0; i < LEN-1; i++) {
+
+        int min_index = find_min_index(numbers,LEN,i);
+
+        // 特别注意这里，传过来的是拷贝，实际数组没有发生变化
+        // Swap(int numbers[i], int numbers[min_index] );
+        Swap(numbers, numbers[i], numbers[min_index]);
+
+
+    }
+
+    for (int i = 0;i<LEN;i++) {
+        printf("%d ",numbers[i]);
+    }
+    return 0;
+}
+
+
+int find_min_index(const int num[], int len, int begin) {
+        int min = num[begin];
+        int min_index = begin;
+        for (int j = begin+1; j < len; j++) {
+            if (num[j]<min) {
+                min = num[j];
+                min_index = j;
+            }
+        }
+    return min_index;
+}
+//交换两个数
+void Swap(int arr[], int left_index, int right_index) {
+    int temp = arr[left_index];
+    arr[left_index] = arr[right_index];
+    arr[right_index] = temp;
+}
+
+//二维数组，一维数组是怎么访问的，怎么访问数组中的任意一个元素
+//int arr[]  与长度大小无关
+//int [][SIZE] 与行数无关
+//想要访问int arr[2]： 需要首地址arr，需要数据类型int 首地址 + 2 * size of int
+//想要访问int arr[2][3]
+//在计算机中
+//-----
+//-----
+//-----
+//-----
+//-----
+//长成这样
+//------------------------
+//int arr[2][3]：需要首地址 + 2 * size of rows + 3 * size of int
