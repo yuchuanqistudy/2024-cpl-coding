@@ -1,0 +1,5 @@
+add_executable(zhengshu zhengshu.c)
+add_executable(buhan buhan.c)
+add_executable(yidongshuzu 移动数组.c)
+add_executable(zhaopingheng 找平衡位置.c)
+add_executable(zuiduanqujian 最短区间.c)
