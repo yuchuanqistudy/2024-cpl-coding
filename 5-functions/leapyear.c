@@ -166,3 +166,22 @@ void Swap(int arr[], int left_index, int right_index) {
 //长成这样
 //------------------------
 //int arr[2][3]：需要首地址 + 2 * size of rows + 3 * size of int
+
+//显示类型转换
+double pi = 3.1415;
+pi = pi - (int)pi;
+
+//整形提升 通常是char再做运算时提升到int 但是int不会提升到long
+
+int n = 1000000000000;
+long long int m = n * n //这样会超出范围
+long long int m = (long long)n * n   //后面那个n自动转换了 变成long long
+
+
+int a = 27382639;
+float b = a;
+a - (int)b //输出不是0 int往float转 也不行 int可能落在gap里 无法编码
+
+//int 像刻度间距固定为 1 的尺子；double 像刻度疏密会变化的尺子。能量到很远，不代表每个位置都能分得很细。
+
+//比较浮点数大小 不能直接比较 应该用差小于tol
