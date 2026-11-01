@@ -11,4 +11,5 @@ add_subdirectory(3-while)
 add_subdirectory(4-loops)
 add_subdirectory(5-functions)
 add_subdirectory(练习)
+add_subdirectory(7-pointer)
 
